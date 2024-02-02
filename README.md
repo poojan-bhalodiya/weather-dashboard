@@ -6,7 +6,7 @@ you have get the open weather api for this link. go to the website and sing up a
 **https://openweathermap.org/**
 
 ### Get weather request 
-```http://localhost:3000/```
+```http://localhost:8000/```
 
 ### How to run this Project
 
