@@ -4,7 +4,7 @@ const axios = require('axios');
 
 const getWeather = async (req, res) => {
   try {
-    const apiKey = 'b9964dac31de53b376e59097f8d3d397';
+    const apiKey = 'YOUR API KEY'; // add your api key
     const city = req.query.city || 'New York';
     const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
 
