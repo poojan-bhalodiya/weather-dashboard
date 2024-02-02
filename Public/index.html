@@ -1,0 +1,33 @@
+<!-- public/index.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather Dashboard</title>
+</head>
+<body>
+  <h1>Weather Dashboard</h1>
+
+  <form id="weatherForm">
+    <label for="cityInput">Enter City:</label>
+    <input type="text" id="cityInput" name="city" required>
+    <button type="submit">Get Weather</button>
+  </form>
+
+  <div id="weatherResult"></div>
+
+  <script>
+    document.getElementById('weatherForm').addEventListener('submit', async function (event) {
+      event.preventDefault();
+
+      const city = document.getElementById('cityInput').value;
+      const response = await fetch(`/weather?city=${city}`);
+      const weatherData = await response.json();
+
+      document.getElementById('weatherResult').innerText = `Current temperature in ${city}: ${weatherData.main.temp}°C`;
+    });
+  </script>
+</body>
+</html>
